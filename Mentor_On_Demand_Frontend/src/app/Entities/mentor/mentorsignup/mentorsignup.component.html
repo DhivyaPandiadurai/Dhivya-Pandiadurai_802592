@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <style>
+            .container{
+    margin-top: -804px;
+    margin-left: 467px;
+    margin-right: -87px;
+}
+            
+            </style>
+
+    </head>   
+    <body>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>ID</td>
+            <td><input type="number" name="mentorid" id="" [(ngModel)]="item.mid"></td>
+        </tr>
+        <tr>
+            <td>Ename</td>
+            <td><input type="text" name="mentorname" id="" [(ngModel)]="item.mname"></td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td><input type="number" name="mobilenum" id="" [(ngModel)]="item.mobile"></td>
+        </tr>
+        <tr>
+            <td> <label for="email1" > <b> Email ID </b> </label> <br></td>
+            <!-- <td><input type="text" name="email" id="" [(ngModel)]="item.email"></td> -->
+            <input type ="text" #email1="ngModel" placeholder="Enter Email" name="email"  [(ngModel)]="item.email" required email /> <br>
+            <div  *ngIf="email1.errors && (email1.dirty || email1.touched)">
+                <p  *ngIf="email1.errors.required"> * Email ID is required </p> 
+                <p  *ngIf="email1.errors.email"> * Email ID is not valid </p>
+              </div>
+        
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="Password" id="" [(ngModel)]="item.password"></td>
+        </tr>
+        <tr>
+            <td>Experience</td>
+            <td><input type="number" name="Experience" id="" [(ngModel)]="item.Exp"></td>
+        </tr>
+        <tr>
+            <td>primary_skill</td>
+            <td><input type="text" name="primaryskill" id="" [(ngModel)]="item.primary_skill"></td>
+        </tr>
+        <tr>
+            <td>Timeslot</td>
+            <td><input type="text" name="timeslot" id="" [(ngModel)]="item.Timeslot"></td>
+        </tr>
+        <!-- <tr>
+            <td>Availability</td>
+            <td><input type="text" name="avail" id="" [(ngModel)]="item.Availability"></td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input type="text" name="active" id="" [(ngModel)]="item.active"></td>
+        </tr> -->
+        <tr>
+            <td>
+                <button (click)="Add()">Register</button>
+                <!-- <button (click)="Search()">Search</button> -->
+                <!-- <button (click)="Update()">Update</button>
+                <button (click)="Delete()">Delete</button> -->
+            </td>
+        </tr>
+        <tr>
+                <td><h5>If already registered user<a href="/login">Login</a>
+                </h5></td>
+              </tr>
+         
+   
+    </table>
+   <!-- <table class="table table-hover">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <td>Mobile Number</td>
+               <td>E-Mail</td>
+               <td>Experience</td>
+               <td>primary_skill</td>
+               <td>Timeslot</td>
+               <td>Availability</td>
+               <td>active</td>
+
+           </tr>
+       </thead> -->
+       <!-- <tbody *ngFor="let item of list">
+           <tr>
+               <td>{{item.mid}}</td>
+               <td>{{item.mname}}</td>
+               <td>{{item.mobile}}</td>
+               <td>{{item.email}}</td>
+               <td>{{item.Exp}}</td>
+               <td>{{item.primary_skill}}</td>
+               <td>{{item.Timeslot}}</td>
+               <td>{{item.Availability}}</td>
+               <td>{{item.active}}</td>
+           </tr>
+       </tbody> -->
+  
+   
+</div>
+
+</body>
+</html>
+
+{{item|json}}

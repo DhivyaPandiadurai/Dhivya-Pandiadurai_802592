@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<table>
+    <thead>
+            <tr>
+                    <th>Payment ID</th>
+                    <th>User ID</th>
+                    <th>Amount</th>
+                    <th>Mentor ID</th>
+                    <th>Duration</th>
+                
+               
+            </tr>
+        </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>
+              {{item.pid}}
+            </td>
+            <td>
+                {{item.uid}}
+              </td>
+              <td>
+                  {{item.amount}}
+                </td>
+                <td>
+                    {{item.mid}}
+                  </td>
+                  <td>
+                      {{item.mentor_Amount}}
+                  </td>
+              
+              <!-- <td> <button type="submit" (click)="Block(item.mid)">Block</button></td>
+                <td> <button type="submit" (click)="Delete(item.mid)">Delete</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  </body>
+  </html>
+

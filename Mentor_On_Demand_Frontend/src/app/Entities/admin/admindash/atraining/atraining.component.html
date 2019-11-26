@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<table>
+    <thead>
+            <tr>
+                <th>Training-ID</th>
+                
+                <th>User-ID</th>
+                <th>Mentor-ID</th>
+                <th>Skill-ID</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Timeslot</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Rating</th>
+                
+            </tr>
+        </thead>
+    <tbody *ngFor="let item of list">
+      <tr>
+        <td>
+          {{item.trainingID}}
+        </td>
+        <td>
+            {{item.uid}}
+          </td>
+          <td>
+              {{item.mid}}
+            </td>
+            <td>
+                {{item.skillId}}
+              </td>
+              <td>
+                  {{item.startDate | date:"yyyy-MM-dd"}}
+              </td>
+              <td>
+                  {{item.endDate | date:"yyyy-MM-dd"}}
+              </td>
+              <td>
+                    {{item.timeslot}}
+              </td>
+              <td>
+                    {{item.status}}
+              </td>
+              <td>
+                    {{item.progress}}
+              </td>
+              <td>
+                    {{item.rating}}
+              </td>
+
+              <!-- <td> <button type="submit" (click)="Block(item.mid)">Block</button></td>
+                <td> <button type="submit" (click)="Delete(item.mid)">Delete</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  </body>
+  </html>

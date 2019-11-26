@@ -1,0 +1,111 @@
+<html>
+<head>
+
+<style>
+    .whole{
+        margin-top: -836px;
+    }
+    table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="whole">
+    Welcome {{UserName}}!
+    <button type="submit" (click)="add()">Edit Profile</button>
+    <div *ngIf="addclick==1">
+
+<table class="table table-bordered">
+    
+    <tr>
+        <td>Ename</td>
+        <td><input type="text" name="username" id="" [(ngModel)]="item.name"></td>
+    </tr>
+    <tr>
+        <td><label for="email1" > <b> Email ID </b> </label> <br></td>
+        <!-- <td><input type="text" name="email" id="" [(ngModel)]="item.email"></td> -->
+        <input type ="text" #email1="ngModel" placeholder="Enter Email" name="email"  [(ngModel)]="item.email" required email /> <br>
+        <div  *ngIf="email1.errors && (email1.dirty || email1.touched)">
+            <p  *ngIf="email1.errors.required"> * Email ID is required </p> 
+            <p  *ngIf="email1.errors.email"> * Email ID is not valid </p>
+          </div>
+   
+   
+    </tr>
+ 
+    <tr>
+        <td>Mobile Number</td>
+        <td><input type="number" name="mobilenum" id="" [(ngModel)]="item.mobile"></td>
+    </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="text" name="password" id="" [(ngModel)]="item.password"></td>
+    </tr>
+<tr>
+    <td>
+        <button (click)="Update()">Edit</button>
+    </td>
+</tr>
+</table>
+</div>
+
+<button (click)="UserCurrentTrainings()">Current Trainings</button>
+<table>
+        <thead>
+                <tr>
+                    <th>Training-ID</th>
+                    <th>User ID</th>
+                    <th>Mentor ID</th>
+                    <th>Skill ID</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Timeslot</th>
+                    <th>Status</th>
+                    <th>Progress</th>
+                    <th>Rating</th>
+                    
+                </tr>
+            </thead>
+        <tbody *ngFor="let items of lists">
+          <tr>
+            <td>
+            {{items.trainingID}}  
+            </td>
+            <td>
+                {{items.uid}}
+              </td>
+              <td>
+                  {{items.mid}}
+                </td>
+                <td>
+                    {{items.skillId}}
+                  </td>
+                  <td>
+                    {{items.startDate}}
+                  </td>
+                  <td>
+                    {{items.endDate}}
+                  </td>
+                  <td>
+                    {{items.timeslot}}
+                  </td>
+                  <td>
+                    {{items.status}}
+                  </td>
+                  <td>
+                    {{items.progress}}
+                  </td>
+                  <td>
+                    {{items.rating}}
+                  </td>
+
+    </tr>
+</tbody>
+</table>
+{{lists|json}}
+</div>
+{{item|json}}
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+.container{
+    margin-top: -804px;
+    margin-left: 267px;
+    margin-right: -87px;
+    
+}
+    body {font-family: Arial, Helvetica, sans-serif;}
+    form {border: 3px solid #f1f1f1;}
+    
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color:grey;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+   
+    
+    
+    .container {
+      padding: 16px;
+      padding-left: 273px;
+    padding-right: 629px;
+    }
+    
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      
+    }
+    </style>
+    </head>
+    <body>
+    <form action="/action_page.php" method="post">
+     
+    
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" name="email" class="form-control" [(ngModel)]="email" #emailUser=ngModel ngModel required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" name="pass" class="form-control" [(ngModel)]="first" [(ngModel)]="pwd" #passUser=ngModel ngModel required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+            
+        <button type="submit" (click)="Login()">Login</button>
+        
+      </div>
+      </form>
+
+    
+
+
+
+
+</body>
+</html>

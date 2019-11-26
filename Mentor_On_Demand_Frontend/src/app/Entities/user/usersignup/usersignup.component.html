@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <style>
+.container{
+    margin-top: -804px;
+    margin-left: 267px;
+    margin-right: -87px;
+
+
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+ 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+/* .container {
+  padding: 16px;
+  background-color: white;
+} */
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=number]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.regisbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px ;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.regisbtn:hover {
+  opacity: 1;
+}
+
+
+            </style>
+    </head>
+    <body>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>ID</td>
+            <td><input type="number" name="userid"  [(ngModel)]="item.uid"></td>
+        </tr>
+        <tr>
+            <td>Ename</td>
+            <td><input type="text" name="username"  [(ngModel)]="item.name"></td>
+        </tr>
+        <tr>
+            <td><label for="email1" > <b> Email ID </b> </label> <br></td>
+            <!-- <td><input type="text" name="email" id="" [(ngModel)]="item.email"></td> -->
+            <input type ="text" #email1="ngModel" placeholder="Enter Email" name="email"  [(ngModel)]="item.email" required email /> <br>
+            <div  *ngIf="email1.errors && (email1.dirty || email1.touched)">
+                <p  *ngIf="email1.errors.required"> * Email ID is required </p> 
+                <p  *ngIf="email1.errors.email"> * Email ID is not valid </p>
+              </div>
+       
+       
+        </tr>
+     
+        <tr>
+            <td>Mobile Number</td>
+            <td><input type="number" name="mobilenum"  [(ngModel)]="item.mobile"></td>
+        </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="text" name="password"  [(ngModel)]="item.password"></td>
+        </tr>
+        
+        <!-- <tr>
+            <td>Availability</td>
+            <td><input type="text" name="avail" id="" [(ngModel)]="item.Availability"></td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input type="text" name="active" id="" [(ngModel)]="item.active"></td>
+        </tr> -->
+        <tr>
+            <td>
+                <button class="regisbtn" (click)="Add()">Register</button>
+                <!-- <button (click)="Search()">Search</button> -->
+                <!-- <button class="updatebtn" (click)="Update()">Update</button>
+                <button class="deletebtn" (click)="Delete()">Delete</button> -->
+            </td>
+        </tr>
+        <tr>
+          <td><h5>If already registered user<a href="/login">Login</a>
+          </h5></td>
+        </tr>
+   
+    </table>
+    </div>
+    </body>
+    </html>

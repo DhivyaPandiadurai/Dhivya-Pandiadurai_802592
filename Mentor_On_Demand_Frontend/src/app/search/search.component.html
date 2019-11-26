@@ -1,0 +1,79 @@
+<style>
+        input[type=text]{
+            width: 35%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+          }
+          table, th, td {
+  border: 1px solid black;
+}
+          
+          input[type=text]:focus {
+            background-color: #ddd;
+            outline: none;
+          }
+          .container {
+            padding: 16px;
+          background-color:pink;
+          margin: 3% auto 15% auto; 
+          border: 1px solid #888;
+          width: 20%; 
+          margin-top: 79px;
+          }
+          .registerbtn {
+          background-color:skyblue;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 30%;
+          opacity: 0.9;
+        }
+        
+        .registerbtn:hover {
+          opacity: 1;
+        }
+        </style>
+            <div class="container" style="margin-top: -666px;
+            margin-left: 326px;">
+            <label ><b>Technology</b></label>&nbsp;
+        <input type="text" placeholder="Enter technology" style="margin-left: 16px;" [(ngModel)]="skill"><br>
+        <button type="submit" class="registerbtn" style="margin-left: 94px;"(click)="Search()" >Search</button></div>
+        <table>
+                <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>mobile</th>
+                            <th>Email</th>
+                            <th>Experience</th>
+                            <th>Timeslot</th>
+                        </tr>
+                    </thead>
+                <tbody *ngFor="let item of list">
+                  <tr>
+                    <td>
+                      {{item.mid}}
+                    </td>
+                    <td>
+                        {{item.mname}}
+                      </td>
+                      <td>
+                          {{item.mobile}}
+                        </td>
+                        <td>
+                            {{item.email}}
+                          </td>
+                          <td>
+                              {{item.exp}}
+                          </td>
+                          <td>
+                              {{item.timeslot}}
+                          </td>
+                  </tr>
+                </tbody>
+              </table>

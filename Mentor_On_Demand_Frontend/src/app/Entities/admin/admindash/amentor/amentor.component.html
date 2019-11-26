@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<table>
+    <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>mobile</th>
+                <th>Email</th>
+                <th>Experience</th>
+                <th>Primary Skills</th>
+                <th>Timeslot</th>
+                <th>Active</th>
+                <th>Block</th>
+                <th>UnBlock</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+    <tbody *ngFor="let item of list">
+      <tr>
+        <td>
+          {{item.mid}}
+        </td>
+        <td>
+            {{item.mname}}
+          </td>
+          <td>
+              {{item.mobile}}
+            </td>
+            <td>
+                {{item.email}}
+              </td>
+              <td>
+                  {{item.exp}}
+              </td>
+              <td>
+                {{item.primary_skill}}
+              </td>
+              <td>
+                  {{item.timeslot}}
+              </td>
+              <td>
+                {{item.active}}
+              </td>
+         
+              <td> <button type="submit" (click)="Block(item.mid)">Block</button></td>
+              <td> <button type="submit" (click)="UnBlock(item.mid)">UnBlock</button></td> 
+              <td> <button type="submit" (click)="Delete(item.mid)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </body>
+  </html>

@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+  border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<table>
+    <thead>
+            <tr>
+                
+                
+                <th>Skill-ID</th>
+                <th>SkillName</th>
+                <th>Table of Content</th>
+                <th>Fee</th>
+                <th>Duration</th>
+               
+            </tr>
+        </thead>
+    <tbody *ngFor="let item of list">
+          
+      <tr>
+        <td>
+          {{item.skillId}}
+        </td>
+        <td>
+            {{item.skillName}}
+          </td>
+          <td>
+              {{item.tableOfContent}}
+            </td>
+            <td>
+                {{item.fee}}
+              </td>
+              <td>
+                  {{item.duration}}
+              </td>
+              
+              <!-- <td> <button type="submit" (click)="Block(item.mid)">Block</button></td>
+                <td> <button type="submit" (click)="Delete(item.mid)">Delete</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="add()">Add</button>
+  <div *ngIf="addclick==1"> 
+     <input type="text" name="Name" [(ngModel)]="item.skillName"><br>
+    <input type="text" name="toc" [(ngModel)]="item.tableOfContent"><br>
+    <input type="number" name="fee" [(ngModel)]="item.fee"><br>
+    <input type="number" name="duration" [(ngModel)]="item.duration"><br>
+  </div>
+  <button (click)="Add()">Add</button>
+  </body>
+  </html>
+
